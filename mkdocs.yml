@@ -1,0 +1,333 @@
+# Project information
+site_name: Linux设备驱动开发教程中心
+site_url: https://github.com/100askTeam/LinuxDeviceDriver-Tranning.git
+site_author: 100askTeam
+site_description: >-
+  100ASKTeam boards Start Page.
+copyright: Copyright &copy; 2008 - 2023 100ask Team
+edit_uri: edit/master/docs/
+repo_url: https://github.com/100askTeam/LinuxDeviceDriver-Tranning/
+repo_name: 100askTeam/LinuxCodeLibrary
+
+# Configuration
+theme:
+  name: material
+  custom_dir: overrides
+  # Static files
+  static_templates:
+    - 404.html
+  # Don't include MkDocs' JavaScript
+  include_search_page: true
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: zh
+  features:
+    - navigation.top
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - search.share
+#    - navigation.sections
+#    - navigation.expand    
+#    - navigation.tabs  
+  palette:
+    - scheme: default
+      primary: teal
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: favicon.png
+  icon:
+    logo: dsp-logo
+
+# Plugins
+plugins:
+  - search
+  - markmap:
+      base_path: docs
+      encoding: utf-8
+      file_extension: .mm.md
+      d3_version: 6.7.0
+      lib_version: 0.14.1
+      view_version: 0.14.0 
+#  - offline  
+  - minify:
+      minify_html: true
+#  - social:
+#      cards_color:
+#        fill: "#0FF1CE" 
+#        text: "#FFFFFF"
+  - search:
+      jieba_dict: dict.txt 
+extra:
+  analytics:
+    provider: google
+    property: G-LZX4K52CZ1
+  homepage: https://ldd.100ask.net
+  alternate:
+    - name: 中文简体
+      link: /
+      lang: zh  
+
+      
+#  disqus: dongshanpi-com
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables  
+  - toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify  
+  - toc:
+      permalink: true
+  - toc:
+      title: On this page
+  - toc:
+      permalink_title: Anchor link to this section for reference
+  - toc:
+      toc_depth: 3      
+  - pymdownx.arithmatex:
+      generic: true        
+  - pymdownx.arithmatex:
+      generic: true
+
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tilde  
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true   
+  - pymdownx.snippets      
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - def_list      
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  
+# Page tree
+nav:
+  - 1.课程介绍:
+    - 简述: index.md     
+  - 2.同步与互斥:
+    - LinuxShell:
+      - 文件管理类命令: 'Stage1-LinuxCprogrammers/LinuxShell/Filemanagement.md'
+      - 文档编辑类命令: 'Stage1-LinuxCprogrammers/LinuxShell/DocumentEditing.md'
+      - 系统管理: 'Stage1-LinuxCprogrammers/LinuxShell/SystemManagement.md' 
+      - 磁盘操作: 'Stage1-LinuxCprogrammers/LinuxShell/DiskOperation.md'
+  - 3.LCD显示子系统:
+    - 01_单片机_Linux下不同接口的LCD硬件操作原理: '03_LCD/01_1.md' 
+    - 02_Framebuffer驱动程序框架: '03_LCD/02_1.md'
+    - 03_编程_写出框架: '03_LCD/03.md'
+    - 04_最简单的LCD驱动_基于QEMU: '03_LCD/04.md'
+    - 05_上机实验_基于QEMU: '03_LCD/05.md'
+    - 06_结合APP分析LCD驱动程序: '03_LCD/06_1.md'
+    - 07_硬件_8080接口LCD时序分析: '03_LCD/07_1.md'
+    - 08_硬件_TFT-RGB接口LCD时序分析: '03_LCD/08_1.md' 
+    - 09_硬件_IMX6ULL的LCD控制器: '03_LCD/09_1.md'
+    - 10_分析内核自带的LCD驱动程序_基于IMX6ULL: '03_LCD/10_1.md'
+    - 11_编程_LCD驱动程序框架_使用设备树: '03_LCD/11_1.md'
+    - 12_编程_配置引脚_基于IMX6ULL: '03_LCD/12_1.md'
+    - 13_编程_配置时钟_基于IMX6ULL: '03_LCD/13_1.md'
+    - 14_编程_配置LCD控制器之获得LCD参数_基于IMX6ULL: '03_LCD/14_1.md'
+    - 15_编程_配置LCD控制器之寄存器操作_基于IMX6ULL: '03_LCD/15_1.md'
+    - 16_上机实验_基于IMX6ULL: '03_LCD/16.md'
+    - 17_单Buffer的缺点与改进方法: '03_LCD/17_1.md'
+    - 18_编写使用多buffer的应用程序: '03_LCD/18.md'
+  - 4.I2C子系统:
+    - 01_I2C视频介绍: '04_I2C/01.md'
+    - 02_I2C协议: '04_I2C/02_1.md'
+    - 03_SMBus协议: '04_I2C/03.md'
+    - 04_I2C系统的重要结构体: '04_I2C/04.md'
+    - 05_无需编写驱动直接访问设备_I2C-Tools介绍: '04_I2C/05.md'
+    - 06_编写APP直接访问EEPROM: '04_I2C/06.md'
+    - 07_通用驱动i2c-dev分析: '04_I2C/07.md'
+    - 08_I2C系统驱动程序模型: '04_I2C/08_1.md'
+    - 09_编写设备驱动之i2c_driver: '04_I2C/09.md'
+    - 10_编写设备驱动之i2c_client: '04_I2C/10.md'
+    - 11_I2C_Adapter驱动框架讲解与编写: '04_I2C/11.md'
+    - 12_完善虚拟的I2C_Adapter驱动并模拟EEPROM: '04_I2C/12_1.md'
+    - 13_使用GPIO模拟I2C的驱动程序分析: '04_I2C/13_1.md'
+    - 14_使用GPIO操作I2C设备_基于IMX6ULL: '04_I2C/14.md'
+    - 15_具体芯片的I2C_Adapter驱动分析: '04_I2C/15_1.md'
+  - 5.Input输入子系统: 
+    - 01_Input子系统视频介绍: '05_Input/01.md'
+    - 02_先学习输入系统应用编程: '05_Input/02.md'  
+    - DRV_01_Input子系统框架详解: '05_Input/04_1.md'
+    - DRV_02_编写input_dev驱动框架: '05_Input/04_2.md'
+    - DRV_03_编写最简单的触摸屏驱动程序_基于QEMU: '05_Input/04_3.md'
+    - DRV_04_GPIO按键驱动分析与使用: '05_Input/04_4.md'
+    - DRV_05_I2C接口触摸屏驱动分析: '05_Input/04_5.md'
+    - DRV_06_UInput分析_用户态创建input_dev: '05_Input/04_6.md'
+  - 6.Pinctrl子系统:
+    - 01_Pinctrl子系统视频介绍: '06_Pinctrl/01.md'
+    - 02_Pinctrl子系统使用示例_基于IMX6ULL: '06_Pinctrl/03_1.md'
+    - 03_Pinctrl子系统使用示例: '06_Pinctrl/03_2.md'
+    - 04_Pinctrl子系统主要数据结构: '06_Pinctrl/04_1.md'
+    - 05_Pincontroller构造过程情景分析_基于IMX6ULL: '06_Pinctrl/05_1.md'
+    - 06_client端使用pinctrl过程的情景分析_基于IMX6ULL: '06_Pinctrl/06_1.md'
+    - 07_编写虚拟的Pinctrl驱动程序: '06_Pinctrl/07_1.md'
+    - 08_调试虚拟的Pinctrl驱动程序: '06_Pinctrl/08_1.md'
+  - 7.GPIO子系统:
+    - 01_GPIO子系统视频介绍: '07_GPIO/01_1.md'
+    - 02_GPIO子系统层次与数据结构: '07_GPIO/05_1.md'
+    - 03_IMX6ULL的GPIO驱动源码分析: '07_GPIO/06_1.md'
+    - 04_编写一个虚拟GPIO控制器的驱动程序: '07_GPIO/07_1.md'
+    - 05_调试与使用虚拟的GPIO控制器: '07_GPIO/08_1.md'
+    - 06_GPIO子系统与Pinctrl子系统的交互: '07_GPIO/09_1.md'
+    - 07_编程_GPIO使用Pinctrl: '07_GPIO/10_1.md'
+    - 08_GPIO子系统的sysfs接口: '07_GPIO/11_1.md'
+  - 8.Interrupt子系统:
+    - 01_中断相关的其他驱动程序:  '08_Interrupt/08_1.md'
+    - 02_中断的硬件框架: '08_Interrupt/09_1.md'
+    - 03_GIC介绍与编程: '08_Interrupt/10_1.md'
+    - 04_异常向量表的安装与调用: '08_Interrupt/11_1.md'
+    - 05_GIC驱动程序对中断的处理流程: '08_Interrupt/12_1.md'
+    - 06_GIC驱动程序分析: '08_Interrupt/13_1.md'
+    - 07_两类中断控制器处理流程_链式和层级: '08_Interrupt/14_1.md'
+    - 08_链式中断控制器驱动程序编写: '08_Interrupt/15_1.md'
+    - 09_legacy方式代码的上机实验: '08_Interrupt/16_1.md'
+    - 10_链式中断控制器驱动程序编写_linear方式本: '08_Interrupt/17_1.md'
+    - 11_层级中断控制器驱动程序编写: '08_Interrupt/18_1.md'
+    - 12_层级中断控制器驱动程序上机实验: '08_Interrupt/19_1.md'
+  - 9.UART子系统:
+    - 01_UART子系统视频介绍: '09_UART/01_1.md'
+    - 02_硬件知识_UART硬件介绍: '09_UART/02_1.md'
+    - 03_TTY体系中设备节点的差别: '09_UART/03_1.md'
+    - 04_TTY驱动程序框架: '09_UART/04_1.md'
+    - 05_在STM32MP157上做串口实验的准备工作: '09_UART/05_1.md'
+    - 06_Linux串口应用编程: '09_UART/06_1.md'
+    - 07_字符设备驱动程序的另一种注册方法: '09_UART/07_1.md'
+    - 08_UART驱动情景分析_注册: '09_UART/08_1.md'
+    - 09_UART驱动情景分析_open: '09_UART/09_1.md'
+    - 10_UART驱动情景分析_read: '09_UART/10_1.md'
+    - 11_UART驱动情景分析_write: '09_UART/11_1.md'
+    - 12_UART驱动调试方法: '09_UART/12_1.md'
+    - 13_编写虚拟UART驱动程序_框架: '09_UART/13_1.md'
+    - 14_编写虚拟UART驱动程序_实现uart_ops: '09_UART/14_1.md'
+    - 15_编写虚拟UART驱动程序_实现数据传输: '09_UART/15_1.md'
+    - 16_编写虚拟UART驱动程序_调试: '09_UART/16_1.md'
+    - 17_printk执行过程: '09_UART/17_1.md'
+    - 18_console驱动注册过程: '09_UART/18_1.md'
+    - 19_编写console驱动: '09_UART/19_1.md'
+    - 20_early_printk和earlycon: '09_UART/20_1.md'
+    - 21_RS485简单讲解: '09_UART/21_1.md'
+  - 10.PCI_PCIe子系统:
+    - 01_从软件开发角度看待PCI和PCIe: '10_PCI_PCIe/01_1.md'
+    - 02_PCI设备的访问方法_非桥设备(type0): '10_PCI_PCIe/02_1.md'
+    - 03_PCI设备的访问方法_桥设备(type1): '10_PCI_PCIe/03_1.md'
+    - 04_从软件角度看PCIe设备的硬件结构: '10_PCI_PCIe/04_1.md'
+    - 05_PCIe设备的配置过程: '10_PCI_PCIe/05_1.md'
+    - 06_PCIe路由方式: '10_PCI_PCIe/06_1.md' 
+    - 07_PCI驱动程序框架: '10_PCI_PCIe/07_1.md'
+    - 08_RK3399_PCIe芯片手册解读: '10_PCI_PCIe/08_1.md'
+    - 09_RK3399_PCIe_Host驱动分析_地址映射: '10_PCI_PCIe/09_1.md'
+    - 10_RK3399_PCIe_Host驱动分析_设备枚举: '10_PCI_PCIe/10_1.md'
+    - 11_INTx_MSI_MSIX三种中断机制分析: '10_PCI_PCIe/11_1.md'
+    - 12_INTx中断机制源码分析: '10_PCI_PCIe/12_1.md'
+    - 13_GICv3_LPI机制: '10_PCI_PCIe/13_1.md'
+    - 14_MSI_MSI-X中断之体验与使用: '10_PCI_PCIe/14_1.md'
+    - 15_MSI_MSI-X中断之源码分析: '10_PCI_PCIe/15_1.md'
+    - 16_怎么编写PCIe设备驱动程序: '10_PCI_PCIe/16_1.md'
+  - 11.SPI子系统:
+    - 01_SPI视频概述: '11_SPI/01_1.md'
+    - 02_SPI协议介绍: '11_SPI/02_1.md'
+    - 03_SPI总线设备驱动模型: '11_SPI/03_1.md'
+    - 04_SPI设备树处理过程: '11_SPI/04_1.md'
+    - 05_spidev的使用(SPI用户态API): '11_SPI/05_1.md'
+    - 06_使用spidev操作SPI_DAC模块: '11_SPI/06_1.md'
+    - 07_DAC模块上机实验: '11_SPI/07_1.md'
+    - 08_SPI_OLED模块操作方法: '11_SPI/08_1.md'
+    - 09_使用spidev操作SPI_OLED模块: '11_SPI/09_1.md'
+    - 10_OLED模块上机实验: '11_SPI/10_1.md'
+    - 11_编写SPI设备驱动程序: '11_SPI/11_1.md'
+    - 12_编写SPI_DAC模块驱动程序: '11_SPI/12_1.md'
+    - 13_编写DAC驱动_上机实验: '11_SPI/13_1.md'
+    - 14_编写SPI_OLED模块驱动程序: '11_SPI/14_1.md'
+    - 15_编写OLED驱动_上机实验: '11_SPI/15_1.md'
+    - 16_使用Framebuffer改造OLED驱动: '11_SPI/16_1.md'
+    - 17_OLED_Framebuffer驱动_上机实验: '11_SPI/17_1.md'
+    - 18_SPI_Master驱动程序框架: '11_SPI/18_1.md'
+    - 19_编写SPI_Master驱动程序_老方法: '11_SPI/19_1.md'
+    - 20_使用老方法编写的SPI_Master驱动程序上机实验: '11_SPI/20_1.md'
+    - 21_编写SPI_Master驱动程序_新方法: '11_SPI/21_1.md'
+    - 22_使用新方法编写的SPI_Master驱动程序上机实验: '11_SPI/22_1.md'
+    - 23_SPI_Slave_Mode驱动程序框架: '11_SPI/23_1.md'
+    - 24_SPI_Slave_Mode驱动程序源码解读: '11_SPI/24_1.md'
+    - 临时笔记: '11_SPI/25_1.md'
+  - 12.USB子系统:
+    - 01_USB视频介绍及资料下载: '12_USB/01_1.md'
+    - 02_USB系统硬件框架和软件框架: '12_USB/02_1.md'
+    - 03_软件工程师眼里的USB电气信号: '12_USB/03_1.md'
+    - 04_USB协议层数据格式: '12_USB/04_1.md'
+    - 05_USB描述符: '12_USB/05_1.md'
+    - 06_libusb的使用: '12_USB/06_1.md'
+    - 07_使用libusb读取鼠标数据: '12_USB/07_1.md'
+    - 08_USB设备驱动模型: '12_USB/08_1.md'
+    - 09_编写USB鼠标驱动程序: '12_USB/09_1.md'
+    - 10_OTG硬件监测电路: '12_USB/10_1.md'
+    - 11_Gadget驱动程序框架: '12_USB/11_1.md'
+    - 12_Gadget应用实例之zero: '12_USB/12_1.md'
+    - 13_Gadget应用实例之serial: '12_USB/13_1.md'
+    - 14_configfs的使用与内部机制: '12_USB/13_1.md'
+    - 15_Gadget应用实例之adb: '12_USB/14_1.md'
+    - 其他参考资料: '12_USB/15_1.md'
+    - tmp: '12_USB/16_1.md'
+  - 13.V4L2子系统:
+    - 01_V4L2应用程序开发: '13_V4L2/01_1.md'
+    - 02_V4L2驱动程序框架: '13_V4L2/02_1.md'
+    - 03_从0编写一个虚拟摄像头驱动: '13_V4L2/03_1.md'
+    - 04_USB摄像头驱动程序分析: '13_V4L2/04_1.md'
+    - 05_MIPI摄像头驱动程序分析: '13_V4L2/05_1.md'
+    - 笔记: '13_V4L2/06_1.md'
+    - tmp_摄像头控制接口: '13_V4L2/07_1.md'
+
+extra_javascript:
+  - javascripts/shortcuts.js
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - https://unpkg.com/d3@6.7.0/dist/d3.min.js
+  - https://unpkg.com/markmap-lib@0.14.1/dist/browser/index.min.js
+  - https://unpkg.com/markmap-view@0.14.0/dist/index.min.js  
