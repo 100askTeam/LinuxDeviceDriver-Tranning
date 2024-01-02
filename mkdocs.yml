@@ -71,9 +71,6 @@ plugins:
   - search:
       jieba_dict: dict.txt 
 extra:
-  analytics:
-    provider: google
-    property: G-LZX4K52CZ1
   homepage: https://ldd.100ask.net
   alternate:
     - name: 中文简体
