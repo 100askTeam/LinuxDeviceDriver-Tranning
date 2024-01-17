@@ -14,6 +14,8 @@ IMX6ULL-PRO开发板商品介绍：https://item.taobao.com/item.htm?&id=61061358
 STM32MP157-PRO开发板商品介绍：https://item.taobao.com/item.htm?&id=623233533961
 ==}
 
+> 为什么图片显示不全？因为服务器资源有限，文档图片资料庞大，在购买【百问网韦东山驱动大全课程】之后会有完整的文档资料下载地址，课程获取地址：https://item.taobao.com/item.htm?id=636066114871
+
 ### 嵌入式开发流程简述
   在进入嵌入式Linux开发之前，我们需要先了解一下嵌入式系统的开发框架以及流程，如下图所示，左侧为我们常用的PC电脑主机，右侧为嵌入式系统，因为嵌入式芯片的性能内存存储条件等原因 无法直接在嵌入式芯片上进行程序开发，此时我们就需要借助性能强大的PC主机，一般为X86电脑，通过交叉编译的方式生产 嵌入式芯片可以运行的程序，在这里，我们一般叫PC主机为Host端，对于我们的嵌入式开发板，我们一般成为Target端。我们需要在Host端使用针对于Target端芯片架构生成的工具链进行交叉编译，最后将输出的可执行文件存放至Target(目标开发板)内运行。
 ![eLinuxHostAndTarget](https://cdn.staticaly.com/gh/DongshanPI/LinuxCodeLibrary-Photos@master/eLinuxHostAndTarget.jpg)
